@@ -1,11 +1,15 @@
 import NavBar from "@/components/NavBar";
 import { Label } from "@/components/ui/label";
-import CustomCarousel from "@/components/CustomCarousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
-  const images = [""];
+  const images = [
+    "/images/overview_1.png",
+    "/images/overview_2.png",
+    "/images/overview_3.png",
+  ];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] w-full h-full max-w-screen max-h-screen min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#f9f7f6] to-[#e0dedd]">
+    <div className="grid grid-rows-[20px_1fr_20px] w-full h-full max-w-screen max-h-screen min-h-screen sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#f9f7f6] to-[#e0dedd]">
       <NavBar />
 
       {/* Main Content */}
@@ -24,7 +28,14 @@ export default function Home() {
 
         {/* CONTENT */}
         <div className="">
-          <CustomCarousel images={images} />
+          <Card className="h-full">
+            <CardContent className="flex aspect-square items-center justify-center p-6">
+              <img
+                src={images[0]}
+                className="w-full h-full object-scale-down"
+              />
+            </CardContent>
+          </Card>
         </div>
       </main>
     </div>

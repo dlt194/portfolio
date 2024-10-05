@@ -1,7 +1,8 @@
+"use client";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { LinkedInLogoIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,6 +11,15 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -43,47 +53,53 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export default function NavBar() {
+  const ModeToggle = () => {
+    const { setTheme } = useTheme();
+  };
+
   return (
     <NavigationMenu>
-      <div className="flex flex-row items-center justify-between w-full">
+      <NavigationMenuList className="flex items-center w-full ">
         {/* Left-aligned "Dan Thomas" */}
-        <NavigationMenuList className="flex">
-          <NavigationMenuItem className="text-lg font-bold">
-            <a href="/">Dan Thomas</a>
-          </NavigationMenuItem>
-        </NavigationMenuList>
+        <div className="fixed left-0 top-0 z-10 flex h-16 w-full items-center justify-between">
+          <div className="flex items-center pl-10">
+            <NavigationMenuItem className="text-lg font-bold mr-auto">
+              <a href="/">Dan Thomas</a>
+            </NavigationMenuItem>
+          </div>
 
-        {/* Right-aligned navigation items */}
-        <NavigationMenuList className="flex ml-auto space-x-4 bg-transparent">
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent">
-              Projects
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                {components.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                  >
-                    {component.description}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/dan-thomas-2b338b79/"
-              className="inline-block"
-            >
-              <LinkedInLogoIcon />
-            </a>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </div>
+          {/* Right-aligned navigation items */}
+          <div className="flex items-center pr-10">
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="bg-transparent">
+                Projects
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  {components.map((component) => (
+                    <ListItem
+                      key={component.title}
+                      title={component.title}
+                      href={component.href}
+                    >
+                      {component.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/dan-thomas-2b338b79/"
+                className="inline-block"
+              >
+                <LinkedInLogoIcon />
+              </a>
+            </NavigationMenuItem>
+          </div>
+        </div>
+      </NavigationMenuList>
     </NavigationMenu>
   );
 }
