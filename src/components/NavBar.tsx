@@ -27,8 +27,7 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "Thorpe-le-Soken Bowling club",
     href: "/thorpe",
-    description:
-      "Basic website created for Thorpe-le-Soken Bowling Club. Allows the club to attract new members and keep existing members up-to-date with scheduled matches & planned events",
+    description: "Basic website created for Thorpe-le-Soken Bowling Club. ",
   },
   {
     title: "Walsh/Thomas Wedding",
