@@ -49,14 +49,16 @@ export default function NavBar() {
         {/* Left-aligned "Dan Thomas" */}
         <NavigationMenuList className="flex">
           <NavigationMenuItem className="text-lg font-bold">
-            Dan Thomas
+            <a href="/">Dan Thomas</a>
           </NavigationMenuItem>
         </NavigationMenuList>
 
         {/* Right-aligned navigation items */}
-        <NavigationMenuList className="flex ml-auto space-x-4">
+        <NavigationMenuList className="flex ml-auto space-x-4 bg-transparent">
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-transparent">
+              Projects
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {components.map((component) => (

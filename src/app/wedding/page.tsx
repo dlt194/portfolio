@@ -1,19 +1,23 @@
+"use client";
 import NavBar from "@/components/NavBar";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
+
+import CustomCarousel from "@/components/CustomCarousel";
 
 import { Link2Icon } from "@radix-ui/react-icons";
 
 export default function Home() {
+  const images = [
+    "/images/wedding_1.png",
+    "/images/wedding_2.png",
+    "/images/wedding_3.png",
+    "/images/wedding_4.png",
+    "/images/wedding_5.png",
+  ];
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#f9f7f6] to-[#e0dedd]">
       <NavBar />
       <main className="flex flex-col gap-8 row-start-2 items-center">
         {/* TITLE */}
@@ -41,29 +45,10 @@ export default function Home() {
         </div>
 
         {/* CAROUSEL */}
-        <div>
-          <Carousel className="max-w-screen">
-            <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <span className="text-4xl font-semibold">
-                          {index + 1}
-                        </span>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+        <div className="">
+          <CustomCarousel images={images} />
         </div>
       </main>
-      <footer className="row-start-3"></footer>
     </div>
   );
 }

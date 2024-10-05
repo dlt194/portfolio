@@ -1,21 +1,31 @@
+"use client";
 import NavBar from "@/components/NavBar";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
 
 import { Link2Icon } from "@radix-ui/react-icons";
+import CustomCarousel from "@/components/CustomCarousel";
 
 export default function Home() {
+  const images = [
+    "/images/thorpe_1.png",
+    "/images/thorpe_2.png",
+    "/images/thorpe_3.png",
+    "/images/thorpe_4.png",
+    "/images/thorpe_5.png",
+    "/images/thorpe_6.png",
+    "/images/thorpe_7.png",
+    "/images/thorpe_8.png",
+    "/images/thorpe_9.png",
+    "/images/thorpe_10.png",
+  ];
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#f9f7f6] to-[#e0dedd]">
       <NavBar />
-      <main className="flex flex-col gap-8 row-start-2 items-center">
+
+      {/* Main Content */}
+      <main className="flex flex-col gap-8 row-start-2 items-center flex-grow w-full">
         {/* TITLE */}
         <div className="flex flex-col justify-center text-center">
           <Label className="text-lg">Thorpe-le-Soken Bowling Club</Label>
@@ -39,29 +49,10 @@ export default function Home() {
         </div>
 
         {/* CAROUSEL */}
-        <div>
-          <Carousel className="max-w-screen">
-            <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <span className="text-4xl font-semibold">
-                          {index + 1}
-                        </span>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+        <div className="">
+          <CustomCarousel images={images} />
         </div>
       </main>
-      <footer className="row-start-3"></footer>
     </div>
   );
 }
