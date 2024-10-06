@@ -12,10 +12,6 @@ export default function Home() {
     "/images/cert_4.png",
     "/images/cert_5.png",
     "/images/cert_6.png",
-    "/images/cert_7.png",
-    "/images/cert_8.png",
-    "/images/cert_9.png",
-    "/images/cert_10.png",
   ];
   return (
     <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#f9f7f6] to-[#e0dedd]">

@@ -58,7 +58,7 @@ export default function NavBar() {
   };
 
   return (
-    <NavigationMenu>
+    <NavigationMenu className="">
       <NavigationMenuList className="flex items-center w-full ">
         {/* Left-aligned "Dan Thomas" */}
         <div className="fixed left-0 top-0 z-10 flex h-16 w-full items-center justify-between">
@@ -70,11 +70,11 @@ export default function NavBar() {
 
           {/* Right-aligned navigation items */}
           <div className="flex items-center pr-10">
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem className="relative">
               <NavigationMenuTrigger className="bg-transparent">
                 Projects
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
+              <NavigationMenuContent className="absolute ">
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                   {components.map((component) => (
                     <ListItem
@@ -87,7 +87,7 @@ export default function NavBar() {
                   ))}
                 </ul>
               </NavigationMenuContent>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
             <NavigationMenuItem>
               <a
                 target="_blank"
