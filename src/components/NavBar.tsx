@@ -10,8 +10,6 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
-import { useTheme } from "next-themes";
-
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Certificate Tool",
@@ -44,10 +42,6 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export default function NavBar() {
-  const ModeToggle = () => {
-    const { setTheme } = useTheme();
-  };
-
   return (
     <NavigationMenu className="">
       <NavigationMenuList className="flex items-center w-full ">
