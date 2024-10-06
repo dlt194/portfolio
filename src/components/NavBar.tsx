@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
+/* const components: { title: string; href: string; description: string }[] = [
   {
     title: "Certificate Tool",
     href: "/cert-tool",
@@ -39,7 +39,7 @@ const components: { title: string; href: string; description: string }[] = [
     href: "/webrtc",
     description: "A custom WebRTC Client for use with Avaya IP Office",
   },
-];
+]; */
 
 export default function NavBar() {
   return (
