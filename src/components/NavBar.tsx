@@ -2,24 +2,15 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import { LinkedInLogoIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons";
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const components: { title: string; href: string; description: string }[] = [
   {
