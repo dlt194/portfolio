@@ -21,13 +21,18 @@ export default function Home() {
       <NavBar />
       <main className="flex flex-col gap-8 row-start-2 items-center">
         {/* TITLE */}
+
         <div className="flex flex-col justify-center text-center">
           <Label className="text-lg">Wedding Website</Label>
 
           <Label className="text-sm">
-            <a href="https://walshthomaswedding.vip/" target="_blank">
+            <a
+              href="https://walshthomaswedding.vip/"
+              target="_blank"
+              className="inline-flex items-center space-x-2"
+            >
               <Link2Icon />
-              https://walshthomaswedding.vip
+              <span>https://walshthomaswedding.vip/</span>
             </a>
           </Label>
         </div>

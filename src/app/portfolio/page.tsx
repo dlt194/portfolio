@@ -22,12 +22,17 @@ export default function Home() {
           <Label className="text-lg">Portfolio</Label>
 
           <Label className="text-sm">
-            <a href="https://github.com/dlt194/portfolio" target="_blank">
+            <a
+              href="https://github.com/dlt194/portfolio"
+              target="_blank"
+              className="inline-flex items-center space-x-2"
+            >
               <Link2Icon />
-              https://github.com/dlt194/portfolio
+              <span>https://github.com/dlt194/portfolio</span>
             </a>
           </Label>
         </div>
+
         {/* Description */}
         <div>
           <Label className="text-sm">

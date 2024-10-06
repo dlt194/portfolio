@@ -31,9 +31,13 @@ export default function Home() {
           <Label className="text-lg">Thorpe-le-Soken Bowling Club</Label>
 
           <Label className="text-sm">
-            <a href="https://thorpelesokenbowlsclub.co.uk/" target="_blank">
+            <a
+              href="https://thorpelesokenbowlsclub.co.uk/"
+              target="_blank"
+              className="inline-flex items-center space-x-2"
+            >
               <Link2Icon />
-              https://thorpelesokenbowlsclub.co.uk/
+              <span>https://thorpelesokenbowlsclub.co.uk/</span>
             </a>
           </Label>
         </div>
