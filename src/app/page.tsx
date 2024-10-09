@@ -34,14 +34,14 @@ export default function Home() {
                 <CardTitle>Cert Tool</CardTitle>
                 <CardDescription>June 2020 - Present</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col items-center justify-center">
                 <Label>Rust - Tauri backend with NextJS Front End</Label>
                 <Image
                   src={images[0]}
                   width={300}
                   height={300}
                   alt=""
-                  className="w-full h-auto max-w-80 max-h-80"
+                  className="w-full h-auto max-w-80 max-h-80 object-contain pt-4"
                 />
               </CardContent>
             </Card>
@@ -52,8 +52,8 @@ export default function Home() {
                 <CardTitle>Chat App</CardTitle>
                 <CardDescription>June 2024 - Present</CardDescription>
               </CardHeader>
-              <CardContent>
-                <Label>
+              <CardContent className="flex flex-col items-center justify-center">
+                <Label className="mb-4 text-center">
                   React - ExpressJS Backend with React Frontend. Embedded in
                   Wordpress Website
                 </Label>
@@ -62,18 +62,19 @@ export default function Home() {
                   width={300}
                   height={300}
                   alt=""
-                  className="w-full h-auto max-w-80 max-h-80"
+                  className="w-full h-auto max-w-80 max-h-80 object-contain pt-4"
                 />
               </CardContent>
             </Card>
           </a>
+
           <a href="/thorpe">
             <Card className="hover:scale-105 transition duration-500 h-full w-full">
               <CardHeader>
                 <CardTitle>Thorpe-le-Soken Bowling Club</CardTitle>
                 <CardDescription>December 2022 - Present</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col items-center justify-center">
                 <Label>
                   HTML, CSS, Python, SQLite - Flask Backend with HTML & CSS for
                   frontend. SQLite Database
@@ -83,7 +84,7 @@ export default function Home() {
                   width={300}
                   height={300}
                   alt=""
-                  className="w-full h-auto max-w-80 max-h-80"
+                  className="w-full h-auto max-w-80 max-h-80 object-contain pt-4"
                 />
               </CardContent>
             </Card>
@@ -94,7 +95,7 @@ export default function Home() {
                 <CardTitle>Wedding Website</CardTitle>
                 <CardDescription>July 2024</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col items-center justify-center">
                 <Label>
                   HTML, CSS, Python, SQLite - Flask Backend with HTML & CSS for
                   frontend. SQLite Database
@@ -104,7 +105,7 @@ export default function Home() {
                   width={300}
                   height={300}
                   alt=""
-                  className="w-full h-auto max-w-80 max-h-80"
+                  className="w-full h-auto max-w-80 max-h-80 object-contain pt-4"
                 />
               </CardContent>
             </Card>
@@ -115,14 +116,14 @@ export default function Home() {
                 <CardTitle>WebRTC Client</CardTitle>
                 <CardDescription>November 2023 - Present</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col items-center justify-center">
                 <Label>React - NextJS Framework</Label>
                 <Image
                   src={images[4]}
                   width={300}
                   height={300}
                   alt=""
-                  className="w-full h-auto max-w-80 max-h-80"
+                  className="w-full h-auto max-w-80 max-h-80 object-contain pt-4"
                 />
               </CardContent>
             </Card>
@@ -133,14 +134,14 @@ export default function Home() {
                 <CardTitle>Portfolio</CardTitle>
                 <CardDescription>October 2024 - Present</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col items-center justify-center">
                 <Label>React - NextJS Framework</Label>
                 <Image
                   src={images[5]}
                   width={300}
                   height={300}
                   alt=""
-                  className="w-full h-auto max-w-80 max-h-80"
+                  className="w-full h-auto max-w-80 max-h-80 object-contain pt-4"
                 />
               </CardContent>
             </Card>
