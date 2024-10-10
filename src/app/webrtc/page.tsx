@@ -8,9 +8,12 @@ export default function Home() {
     "/images/webrtc_1.png",
     "/images/webrtc_2.png",
     "/images/webrtc_3.png",
+    "/images/webrtc_4.png",
+    "/images/webrtc_5.png",
+    "/images/webrtc_6.png",
   ];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#f9f7f6] to-[#e0dedd]">
+    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#f9f7f6] to-[#e0dedd]">
       <NavBar />
       <main className="flex flex-col gap-8 row-start-2 items-center">
         {/* TITLE */}

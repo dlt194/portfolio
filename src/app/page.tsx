@@ -20,7 +20,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] w-full h-full max-w-screen max-h-screen min-h-screen sm:p-20 p-4 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#f9f7f6] to-[#e0dedd] bg-fixed">
+    <div className="grid grid-rows-[20px_1fr_20px] w-full h-full max-w-screen max-h-screen min-h-screen p-4 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-[#f9f7f6] to-[#e0dedd] bg-fixed">
       <div className="z-50 pb-4">
         <NavBar />
       </div>
