@@ -4,6 +4,7 @@ import { Topbar } from "@/components/topbar";
 import { AnalyticsConsentBanner } from "@/components/consent-banner";
 import { RybbitAnalytics } from "@/components/rybbit-analytics";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           <RybbitAnalytics />
           <AnalyticsConsentBanner />
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
