@@ -1,18 +1,12 @@
 "use client";
 
-import * as React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { projects } from "@/data/projects";
-import { pickRandom } from "@/lib/random";
+import type { Project } from "@/data/projects";
+
 import { ProjectCard } from "@/components/project-card";
 
-export function HeroProjects() {
-  const featured = pickRandom(projects, 3);
-
-  if (featured.length === 0) {
-  }
-
+export function HeroProjects({ projects }: { projects: Project[] }) {
   return (
     <section className="mt-4">
       <div className="mb-6 flex items-center justify-between gap-4">
@@ -23,8 +17,8 @@ export function HeroProjects() {
         </Button>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {featured.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+        {projects.map((p) => (
+          <ProjectCard key={p.slug} project={p} />
         ))}
       </div>
     </section>
