@@ -47,24 +47,6 @@ The site focuses on clarity, performance, and maintainability, with a clean UI a
 
 ---
 
-## Project Structure
-
-.
-├── public/ # Static assets (images, PDFs)
-│ └── projects/ # Project screenshots
-├── src/
-│ ├── app/ # Next.js App Router pages
-│ │ ├── projects/ # Project list + dynamic project pages
-│ │ ├── accreditations/
-│ │ ├── contact/
-│ │ ├── cv/
-│ │ └── diploma/
-│ ├── components/ # Reusable UI & feature components
-│ ├── data/ # Static data (projects, nav, accreditations)
-│ ├── lib/ # Utilities (randomisation, consent logic)
-│ └── types/ # Global/shared types
-└── README.md
-
 ## 🚀 Getting Started
 
 ### Prerequisites
