@@ -46,15 +46,3 @@ The site focuses on clarity, performance, and maintainability, with a clean UI a
 - Framer Motion (animations where appropriate)
 
 ---
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- pnpm
-
-### Install dependencies
-
-`powershell`
-pnpm install
