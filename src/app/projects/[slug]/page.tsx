@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ExternalLink, Github } from "lucide-react";
 
 import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
@@ -64,7 +63,7 @@ export default async function ProjectPage({
             {project.href ? (
               <Button asChild>
                 <a href={project.href} target="_blank" rel="noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" />
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
                   Live / Docs
                 </a>
               </Button>
@@ -73,7 +72,7 @@ export default async function ProjectPage({
             {project.github ? (
               <Button variant="outline" asChild>
                 <a href={project.github} target="_blank" rel="noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
+                  <i className="fa-brands fa-github text-base" />
                   GitHub
                 </a>
               </Button>

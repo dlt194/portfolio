@@ -8,6 +8,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { ThemeProvider } from "@/components/theme-provider";
 
+import { Inter } from "next/font/google";
+
+export const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Portfolio - Dan Thomas",
   description: "Portfolio of Dan Thomas - dan@dlt.me.uk",

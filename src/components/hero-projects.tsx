@@ -8,13 +8,9 @@ import { pickRandom } from "@/lib/random";
 import { ProjectCard } from "@/components/project-card";
 
 export function HeroProjects() {
-  const [selection, setSelection] = React.useState<typeof projects>([]);
+  const featured = pickRandom(projects, 3);
 
-  React.useEffect(() => {
-    setSelection(pickRandom(projects, 3));
-  }, []);
-
-  if (selection.length === 0) {
+  if (featured.length === 0) {
   }
 
   return (
@@ -27,7 +23,7 @@ export function HeroProjects() {
         </Button>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {selection.map((project) => (
+        {featured.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
       </div>

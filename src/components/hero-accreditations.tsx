@@ -9,18 +9,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export function HeroAccreditations() {
-  const [selection, setSelection] = React.useState<typeof accreditations>([]);
+  const featured = pickRandom(accreditations, 3);
 
-  React.useEffect(() => {
-    if (!accreditations.length) return;
-
-    const featured = accreditations.filter((a) => a.featured);
-    const pool = featured.length >= 3 ? featured : accreditations;
-
-    setSelection(pickRandom(pool, 3));
-  }, []);
-
-  if (selection.length === 0) return null;
+  if (featured.length === 0) return null;
 
   return (
     <section className="mt-4">
@@ -33,7 +24,7 @@ export function HeroAccreditations() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {selection.map((item) => (
+        {featured.map((item) => (
           <AccreditationCard key={item.id} item={item} />
         ))}
       </div>

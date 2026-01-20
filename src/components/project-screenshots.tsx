@@ -36,13 +36,19 @@ export function ProjectScreenshots({
               className="block w-full text-left"
               aria-label={`Open screenshot: ${s.alt}`}
             >
-              <div className="relative aspect-video w-full">
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg border">
                 <Image
                   src={s.src}
                   alt={s.alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 50vw"
+                  priority={i === 0}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  sizes={
+                    i === 0
+                      ? "(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 768px"
+                      : "(max-width: 640px) 100vw, 50vw"
+                  }
                 />
               </div>
 
