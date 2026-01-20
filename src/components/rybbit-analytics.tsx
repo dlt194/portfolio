@@ -23,19 +23,9 @@ export function RybbitAnalytics() {
 
   if (!enabled) return null;
 
-  /**
-   * Replace the script src + config to match how you integrate Rybbit.
-   * Typical patterns:
-   * - hosted script: <script src="https://.../script.js" data-site-id="..."></script>
-   * - inline init snippet after loading the script
-   */
   return (
     <>
-      <Script
-        src="https://analytics.dlt.me.uk/api/script.js"
-        data-site-id="48696813a5d3"
-        defer
-      />
+      <Script src="/metrics/script.js" data-site-id="48696813a5d3" defer />
     </>
   );
 }
