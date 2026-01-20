@@ -1,24 +1,15 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Topbar } from "@/components/topbar";
+import { AnalyticsConsentBanner } from "@/components/consent-banner";
+import { RybbitAnalytics } from "@/components/rybbit-analytics";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Dan Thomas - Portfolio",
-  description: "",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "Portfolio - Dan Thomas",
+  description: "Portfolio of Dan Thomas - dan@dlt.me.uk",
 };
 
 export default function RootLayout({
@@ -27,13 +18,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-        <Analytics />
-        <SpeedInsights />
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-background text-foreground">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Topbar />
+          {children}
+          <RybbitAnalytics />
+          <AnalyticsConsentBanner />
+        </ThemeProvider>
       </body>
     </html>
   );
