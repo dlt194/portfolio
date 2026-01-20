@@ -1,51 +1,44 @@
 "use client";
 
-import * as React from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  getConsentFromCookie,
-  setConsentCookie,
-  type AnalyticsConsent,
-} from "@/lib/consent";
+import { getConsent, setConsent } from "@/lib/consent";
+import * as React from "react";
 
 export function AnalyticsConsentBanner() {
-  const [consent, setConsent] = React.useState<AnalyticsConsent | null>(null);
+  const [visible, setVisible] = React.useState(false);
 
   React.useEffect(() => {
-    setConsent(getConsentFromCookie());
+    setVisible(getConsent() === null);
   }, []);
 
-  // If user already decided, don't show the banner
-  if (consent) return null;
+  if (!visible) return null;
 
-  function decide(value: AnalyticsConsent) {
-    setConsentCookie(value);
+  function decide(value: "accepted" | "rejected") {
     setConsent(value);
-    // optional: notify other components in this tab
+    setVisible(false);
     window.dispatchEvent(new Event("analytics-consent-updated"));
   }
 
   return (
-    <div className="fixed bottom-4 left-0 right-0 z-50 px-4">
-      <Card className="mx-auto w-full max-w-3xl">
-        <CardContent className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="space-y-1">
-            <p className="text-sm font-medium">Analytics consent</p>
-            <p className="text-sm text-muted-foreground">
-              We use analytics to understand usage and improve the site. You can
-              accept or reject.
-            </p>
-          </div>
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t bg-background/95 p-4 backdrop-blur">
+      <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm text-muted-foreground">
+          This site uses privacy-friendly analytics to understand usage.
+        </p>
 
-          <div className="flex gap-2 sm:shrink-0">
-            <Button variant="outline" onClick={() => decide("rejected")}>
-              Reject
-            </Button>
-            <Button onClick={() => decide("accepted")}>Accept</Button>
-          </div>
-        </CardContent>
-      </Card>
+        <div className="flex gap-2">
+          <Button size="sm" onClick={() => decide("accepted")}>
+            Accept
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => decide("rejected")}
+          >
+            Reject
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

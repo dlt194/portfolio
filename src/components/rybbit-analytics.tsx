@@ -2,18 +2,16 @@
 
 import * as React from "react";
 import Script from "next/script";
-import { getConsentFromCookie } from "@/lib/consent";
+import { getConsent } from "@/lib/consent";
 
 export function RybbitAnalytics() {
   const [enabled, setEnabled] = React.useState(false);
 
   React.useEffect(() => {
-    const current = getConsentFromCookie();
-    setEnabled(current === "accepted");
+    setEnabled(getConsent() === "accepted");
 
     const handler = () => {
-      const updated = getConsentFromCookie();
-      setEnabled(updated === "accepted");
+      setEnabled(getConsent() === "accepted");
     };
 
     window.addEventListener("analytics-consent-updated", handler);
@@ -24,8 +22,10 @@ export function RybbitAnalytics() {
   if (!enabled) return null;
 
   return (
-    <>
-      <Script src="/metrics/script.js" data-site-id="48696813a5d3" defer />
-    </>
+    <Script
+      src="/metrics/script.js"
+      strategy="afterInteractive"
+      data-site-id="48696813a5d3"
+    />
   );
 }
