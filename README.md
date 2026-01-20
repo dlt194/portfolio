@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+A modern, responsive personal portfolio built with **Next.js (App Router)** and **shadcn/ui**, designed to showcase projects, accreditations, and professional experience.
 
-First, run the development server:
+The site focuses on clarity, performance, and maintainability, with a clean UI and minimal dependencies.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Hero landing page** with featured projects and accreditations
+- **Projects section**
+  - Individual project pages
+  - Objectives, screenshots (with lightbox), tech stack
+  - Optional code snippets
+- **Accreditations & certifications** showcase
+- **Contact page** with email, phone, and location
+- **CV / Diploma pages** with PDF rendering
+- **Dark / Light mode** toggle
+- **Analytics consent banner** (Rybbit analytics)
+- Fully responsive and accessible UI
+- Static-first with dynamic routing where appropriate
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+### Core
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 16+** (App Router)
+- **React 19**
+- **TypeScript**
+- **pnpm**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### UI & Styling
 
-## Deploy on Vercel
+- **Tailwind CSS v4**
+- **shadcn/ui**
+- **Radix UI primitives**
+- **Font Awesome (free)**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Tooling
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- ESLint
+- PostCSS
+- Framer Motion (animations where appropriate)
+
+---
+
+## Project Structure
+
+.
+├── public/ # Static assets (images, PDFs)
+│ └── projects/ # Project screenshots
+├── src/
+│ ├── app/ # Next.js App Router pages
+│ │ ├── projects/ # Project list + dynamic project pages
+│ │ ├── accreditations/
+│ │ ├── contact/
+│ │ ├── cv/
+│ │ └── diploma/
+│ ├── components/ # Reusable UI & feature components
+│ ├── data/ # Static data (projects, nav, accreditations)
+│ ├── lib/ # Utilities (randomisation, consent logic)
+│ └── types/ # Global/shared types
+└── README.md
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- pnpm
+
+### Install dependencies
+
+`powershell`
+pnpm install
