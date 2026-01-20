@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink, Github } from "lucide-react";
@@ -12,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import { CodeSnippet } from "@/components/code-snippet";
 import { ProjectScreenshots } from "@/components/project-screenshots";
 
-export const dynamicParams = true; // explicit, allows non-prebuilt params too
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));

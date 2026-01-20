@@ -40,7 +40,6 @@ export default function ProjectsPage() {
         return haystack.includes(query);
       })
       .sort((a, b) => {
-        // featured first, then year/status/title
         const af = a.featured ? 1 : 0;
         const bf = b.featured ? 1 : 0;
         if (af !== bf) return bf - af;

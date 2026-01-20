@@ -5,7 +5,6 @@ import type { Accreditation } from "@/data/accreditations";
 
 function formatDate(input?: string) {
   if (!input) return "";
-  // supports YYYY-MM or YYYY-MM-DD
   const [y, m] = input.split("-");
   if (!y) return input;
   if (!m) return y;

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 function isActive(
   pathname: string,
   href: string,
-  match: "exact" | "startsWith" = "exact"
+  match: "exact" | "startsWith" = "exact",
 ) {
   // Don't treat hash links as "active" (they're sections, not routes)
   if (href.includes("#")) return false;
@@ -33,7 +33,6 @@ export function Topbar() {
 
             const active = isActive(pathname, item.href, item.match);
 
-            // Use <a> for hash links so the browser can scroll correctly
             const isHashLink = item.href.includes("#");
 
             return (

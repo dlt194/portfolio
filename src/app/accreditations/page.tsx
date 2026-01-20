@@ -14,17 +14,23 @@ import {
 
 import { accreditations, type AccreditationType } from "@/data/accreditations";
 
-const TYPES: (AccreditationType | "All")[] = [
+const TYPES = [
   "All",
   "Certification",
   "Diploma",
   "Course",
   "Badge",
-];
+] as const satisfies readonly ("All" | AccreditationType)[];
+
+type AccreditationFilterType = (typeof TYPES)[number];
+
+function isAccreditationFilterType(v: string): v is AccreditationFilterType {
+  return (TYPES as readonly string[]).includes(v);
+}
 
 export default function AccreditationsPage() {
   const [q, setQ] = React.useState("");
-  const [type, setType] = React.useState<(typeof TYPES)[number]>("All");
+  const [type, setType] = React.useState<AccreditationFilterType>("All");
 
   const filtered = React.useMemo(() => {
     const query = q.trim().toLowerCase();
@@ -46,7 +52,6 @@ export default function AccreditationsPage() {
         return haystack.includes(query);
       })
       .sort((a, b) => {
-        // featured first, then newest issued date
         const af = a.featured ? 1 : 0;
         const bf = b.featured ? 1 : 0;
         if (af !== bf) return bf - af;
@@ -78,7 +83,12 @@ export default function AccreditationsPage() {
             className="sm:max-w-md"
           />
 
-          <Select value={type} onValueChange={(v) => setType(v as any)}>
+          <Select
+            value={type}
+            onValueChange={(v) => {
+              if (isAccreditationFilterType(v)) setType(v);
+            }}
+          >
             <SelectTrigger className="sm:w-56">
               <SelectValue placeholder="Type" />
             </SelectTrigger>

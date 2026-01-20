@@ -5,12 +5,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 function normalisePhoneForTel(phone: string) {
-  // keep + and digits only
   return phone.replace(/[^\d+]/g, "");
 }
 
 function normalisePhoneForWhatsApp(phone: string) {
-  // WhatsApp expects digits only, no +
   return phone.replace(/[^\d]/g, "");
 }
 

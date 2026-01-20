@@ -20,6 +20,6 @@ export function setConsentCookie(value: AnalyticsConsent) {
   // 365 days
   const maxAge = 60 * 60 * 24 * 365;
   document.cookie = `${COOKIE_NAME}=${encodeURIComponent(
-    value
+    value,
   )}; Path=/; Max-Age=${maxAge}; SameSite=Lax`;
 }
