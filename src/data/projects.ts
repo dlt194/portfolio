@@ -417,4 +417,70 @@ def pick_priority_code(description: str) -> tuple[int, PriorityDecision]:
     featured: false,
     year: 2026,
   },
+  {
+    slug: "cert-tools-v2",
+    title: "Certificate Tools V2",
+    objectives: [
+      "Update the Certificate Tools to be accessible anywhere",
+      "Remove the requirement for fixed OpenSSL to be installed on the PC running the tool",
+    ],
+    description:
+      "This is a re-write of the original certificate tool with the aim of making the application more maintainable and remove the OpenSSL dependency. It was re-written with NextJS, hosted on our server with Docker allowing NextJS access to the Docker socket to create containers for generating the CSR & P12.",
+    screenshots: [
+      {
+        src: "/projects/cert-tools/01-cert-tools-v2.png",
+        alt: "Certificate Tools Auth Page",
+        caption: "Screenshot of the Auth Page",
+      },
+      {
+        src: "/projects/cert-tools/02-cert-tools-v2.png",
+        alt: "Certificate Tools OpenSSL Config Page",
+        caption: "Screenshot of the OpenSSL Config Page",
+      },
+      {
+        src: "/projects/cert-tools/02-cert-tools-v2.png",
+        alt: "Certificate Tools CSR Creation Page",
+        caption: "Screenshot of the CSR Creation Page",
+      },
+      {
+        src: "/projects/cert-tools/02-cert-tools-v2.png",
+        alt: "Certificate Tools P12 Creation Page",
+        caption: "Screenshot of the P12 Creation Page",
+      },
+      {
+        src: "/projects/cert-tools/02-cert-tools-v2.png",
+        alt: "Certificate Tools Site Testing Page",
+        caption: "Screenshot of the Site Testing Page",
+      },
+    ],
+    tags: ["NextJS", "JavaScript"],
+    tech: {
+      build: [
+        "Next.js",
+        "TypeScript",
+        "shadcn/ui",
+        "Tailwind CSS",
+        "Node.js API Routes",
+        "Dockerode (Docker socket integration)",
+        "OpenSSL runner containers",
+      ],
+      ship: [
+        "Docker image + Docker Compose deployment",
+        "Reverse proxy (NGINX / NPM) + HTTPS",
+        "Environment-based configuration",
+        "Internal hosting (on-prem / VPS)",
+      ],
+      maintain: [
+        "Container image updates (base + OpenSSL runner)",
+        "Security patching and dependency management",
+        "Audit logging and traceability of certificate operations",
+        "Role-based access and authentication upkeep",
+        "Operational monitoring (health checks, logs, alerts)",
+        "Compatibility testing with Avaya IP Office / WebLM certificate requirements",
+      ],
+    },
+    status: "Active",
+    featured: true,
+    year: 2026,
+  },
 ];
