@@ -43,6 +43,5 @@ The site focuses on clarity, performance, and maintainability, with a clean UI a
 
 - ESLint
 - PostCSS
-- Framer Motion
 
 ---
