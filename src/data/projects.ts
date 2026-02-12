@@ -482,4 +482,47 @@ def pick_priority_code(description: str) -> tuple[int, PriorityDecision]:
     featured: true,
     year: 2026,
   },
+  {
+    slug: "ipnetix-web-manager",
+    title: "IP Netix Web Manager",
+    objectives: [
+      "API Orchestration",
+      "Single management interface for multiple products",
+      "Secure auth",
+      "Device monitoring",
+    ],
+    description:
+      "An application designed to combine multiple management interfaces into one single web page, allowing efficient management of multiple customers and their devices.",
+    screenshots: [
+      {
+        src: "/projects/ipn-webmanager/01-dashboard.png",
+        alt: "IP Netix Web Manager Dashboard",
+        caption: "Overview dashboard",
+      },
+      {
+        src: "/projects/ipn-webmanager/02-dashboard.png",
+        alt: "IP Netix Web Manager Dashboard",
+        caption: "Overview Dashboard (Dark Mode)",
+      },
+      {
+        src: "/projects/ipn-webmanager/03-dashboard.png",
+        alt: "System Overview Dashboard",
+        caption: "System Overview Dashboard",
+      },
+      {
+        src: "/projects/ipn-webmanager/04-dashboard.png",
+        alt: "System Terminal Dashboard",
+        caption: "Terminal connection to server for Management",
+      },
+    ],
+    tags: ["Next.js", "TypeScript", "Prisma ORM", "Postgres", "Docker"],
+    tech: {
+      build: ["Next.js", "TypeScript", "shadcn/ui", "Tailwind"],
+      ship: ["Docker", "Environment-based config"],
+      maintain: ["ESLint", "Type-safe patterns", "DB migrations"],
+    },
+    status: "Active",
+    featured: false,
+    year: 2026,
+  },
 ];
